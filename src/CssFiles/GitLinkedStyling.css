@@ -1,0 +1,31 @@
+.icon-button__git {
+    text-align: center;
+    display: inline-flex;
+    background-color: rgb(0, 0, 0); 
+    border: none; 
+    padding: 12px 16px; 
+    cursor: pointer; 
+    border-radius: 12px;
+    margin-left: 5px;
+    
+  }
+  
+  .icon-button__linked {
+    text-align: center;
+    display: inline-flex;
+    background-color: rgb(6, 104, 231); 
+    border: none; 
+    padding: 12px 16px; 
+    cursor: pointer; 
+    border-radius: 12px;
+    margin-left: 5px;
+    
+  }
+  
+  .icon-button__git:hover {
+    background-color: rgb(24, 24, 24);
+  }
+  
+  .icon-button__linked:hover {
+    background-color: rgb(0, 110, 253);
+  }
