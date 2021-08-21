@@ -1,6 +1,9 @@
 import Header from "../components/Header";
 import Space from "../components/Space";
 import React, { useState } from "react";
+import { FaUserAstronaut, FaRegComments } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
+import "../CssFiles/NewConfessionsStyling.css"
 
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 const NewConfessionPage = () => {
 
     const classes = useStyles();
+    const history = useHistory();
 
     const [enteredConfession, setNewConfession] = useState("");
     const [enteredName, setNewName] = useState("");
@@ -44,17 +48,39 @@ const NewConfessionPage = () => {
 
     }
 
+    const handleMoveToConfessions = () => {
+        history.push("/show_confessions");
+    }
+
     return (
         <div>
             <Header></Header>
             <Space></Space>
+            <div style={{
+            position: "absolute",
+            left: "80%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            }}>
+            <FaUserAstronaut color="#3f3f3f" size="23rem"></FaUserAstronaut>
+            </div>
+
+            <div style={{
+            position: "absolute",
+            left: "50%",
+            top: "60%",
+            transform: "translate(-50%, -50%)",
+            }}>
+
+            <FaRegComments className='clickable-to-confessions' color="#3f3f3f" size="6rem" onClick={handleMoveToConfessions}></FaRegComments>
+            </div>
             <form className={classes.root} noValidate autoComplete="off" onSubmit={submitHandler}>
                 <div className='name-line'>
-                <TextField id="new-name" label="Anonymous Name:" type="text"
+                <TextField id="new-name" label="Anonymous Name" type="text"
                  onChange={nameChangeHandler} value={enteredName}/>
                 </div>
                 <div className='confession-line'>
-                <TextField id="new-confession" label="Your Confession:" type="text" helperText="No Offensive Language Allowed!"
+                <TextField id="new-confession" label="Your Confession" type="text" helperText="No Offensive Language Allowed!"
                     multiline  onChange={confessionChangeHandler} value={enteredConfession}/>
                 </div>
                 <div className='submit-button-line'>

@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import "../CssFiles/WelcomePageTitles.css";
 import { useHistory } from "react-router-dom";
+import { FaUserSecret } from "react-icons/fa";
 
 const WelcomePage = () => {
 
@@ -13,6 +14,14 @@ const WelcomePage = () => {
     return (
         <div>
             <Header></Header>
+            <div style={{
+        position: "absolute",
+          left: "80%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}>
+            <FaUserSecret color="#137992" size="23rem"></FaUserSecret>
+            </div>
             <label className ='welcome' style={{
         position: "absolute",
           left: "21%",
