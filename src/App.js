@@ -1,4 +1,5 @@
 import './App.css';
+import { MuiThemeProvider } from '@material-ui/core';
 import WelcomePage from './pages/WelcomePage';
 import AboutMePage from './pages/AboutMePage';
 import NewConfessionPage from './pages/NewConfessionPage';
@@ -7,7 +8,8 @@ import { Route, Redirect } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <MuiThemeProvider>
+      <div className="App">
       <Route path='/' exact>
       <Redirect to='/welcome'></Redirect>
       </Route>
@@ -24,6 +26,7 @@ function App() {
       <Redirect to='/welcome'></Redirect>
       </Route>
     </div>
+    </MuiThemeProvider>
   );
 }
 
