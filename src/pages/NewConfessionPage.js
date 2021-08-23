@@ -65,15 +65,6 @@ const NewConfessionPage = () => {
             <FaUserAstronaut color="#3f3f3f" size="23rem"></FaUserAstronaut>
             </div>
 
-            <div style={{
-            position: "absolute",
-            left: "50%",
-            top: "60%",
-            transform: "translate(-50%, -50%)",
-            }}>
-
-            <FaRegComments className='clickable-to-confessions' color="#3f3f3f" size="6rem" onClick={handleMoveToConfessions}></FaRegComments>
-            </div>
             <form className={classes.root} noValidate autoComplete="off" onSubmit={submitHandler}>
                 <div className='name-line'>
                 <TextField id="new-name" label="Anonymous Name" type="text"
@@ -88,6 +79,10 @@ const NewConfessionPage = () => {
                  type='submit' variant="outlined" color="primary"> Submit </Button>
                 </div>
             </form>
+
+            <div>
+            <FaRegComments className='clickable-to-confessions' color="#3f3f3f" size="6rem" onClick={handleMoveToConfessions}></FaRegComments>
+            </div>
         </div>
     )
 }
