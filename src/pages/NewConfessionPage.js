@@ -39,13 +39,20 @@ const NewConfessionPage = () => {
         setNewConfession(event.target.value);
     }
 
-    const submitHandler = (event) => {
+    async function submitHandler(event){
         event.preventDefault();
         setNewConfession('');
         setNewName('');
-        console.log(enteredConfession);
-        console.log(enteredName);
-
+            await fetch('https://ofek-s-confessions-default-rtdb.firebaseio.com/confessions.json', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: enteredName,
+                content: enteredConfession
+            }),
+            headers: {
+                'Content-Type': 'application-json'
+            }
+        });
     }
 
     const handleMoveToConfessions = () => {

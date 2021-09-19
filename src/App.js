@@ -9,5 +9,4 @@ function App() {
     </MuiThemeProvider>
   );
 }
-
 export default App;
