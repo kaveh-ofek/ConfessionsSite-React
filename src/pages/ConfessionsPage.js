@@ -15,10 +15,12 @@ const ConfessionsPage = () => {
         {
             loadedConfessions.push({
                 name: data[key].name,
-                content: data[key].content
+                content: data[key].content,
+                time: data[key].time
             })
         }
-        setConfessions(loadedConfessions);
+        const last5Confessions = loadedConfessions.slice(-5);
+        setConfessions(last5Confessions.reverse());
 
     });
 

@@ -43,16 +43,21 @@ const NewConfessionPage = () => {
         event.preventDefault();
         setNewConfession('');
         setNewName('');
+
+        if ((enteredName !== '') && (enteredConfession !== ''))
+        {
             await fetch('https://ofek-s-confessions-default-rtdb.firebaseio.com/confessions.json', {
             method: 'POST',
             body: JSON.stringify({
                 name: enteredName,
-                content: enteredConfession
+                content: enteredConfession,
+                time: new Date().toLocaleString()
             }),
             headers: {
                 'Content-Type': 'application-json'
             }
-        });
+            });
+        }
     }
 
     const handleMoveToConfessions = () => {
@@ -78,7 +83,7 @@ const NewConfessionPage = () => {
                  onChange={nameChangeHandler} value={enteredName}/>
                 </div>
                 <div className='confession-line'>
-                <TextField id="new-confession" label="Your Confession" type="text" helperText="No Offensive Language Allowed!"
+                <TextField id="new-confession" label="Your Confession" type="text" helperText="Max - 127 Chars, No Offensive Language Allowed!"
                     multiline  onChange={confessionChangeHandler} value={enteredConfession}/>
                 </div>
                 <div className='submit-button-line'>
