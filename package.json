@@ -1,7 +1,7 @@
 {
   "name": "confessions-app",
   "version": "0.1.0",
-  "homepage": "https://kaveh-ofek.github.io/Chess-React-Frontend",
+  "homepage": "https://kaveh-ofek.github.io/ConfessionsSite-React",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
